@@ -23,6 +23,7 @@ const RGB = ({ match }) => {
         bottom: 0,
         color: 'white',
         paddingTop: '20px',
-        fontSize: '30px'
+        fontSize: '30px',
+        textAlign: 'center'
       }
   export default RGB;

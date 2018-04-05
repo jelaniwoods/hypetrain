@@ -21,9 +21,10 @@ styles.hsl = {
     right: 0,
     top: '40px',
     bottom: 0,
-    color: 'black',
+    color: 'white',
     paddingTop: '20px',
     fontSize: '30px',
+    textAlign: 'center'
 }
   
   export default HSL;
