@@ -14,7 +14,7 @@ const HSL = ({ match }) => {
   }
 
   let styles = {};
-   
+  
 styles.hsl = {
     position: 'absolute',
     left: 0,

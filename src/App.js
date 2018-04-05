@@ -7,7 +7,7 @@ import {
   Switch, // for later
 } from 'react-router-dom';
 import NavLink from './components/NavLink';
-// import RGB from './components/RGB';
+import RGB from './components/RGB';
 import HSL from './components/HSL';
 
 class App extends Component {
@@ -27,6 +27,12 @@ class App extends Component {
             exact={true}
             path={'/hsl/:h/:s/:l'}
             component={HSL}
+          />
+
+          <Route 
+            exact={true}
+            path={'/rgb/:r/:g/:b'}
+            component={RGB}
           />
         </div>
       </div>
@@ -58,7 +64,9 @@ styles.nav = {
   top: 0,
   height: '40px',
   width: '100%',
-  display: 'flex'
+  display: 'flex',
+  zIndex: 1,
+  background: 'white'
 }
 
 
