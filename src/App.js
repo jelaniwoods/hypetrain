@@ -15,6 +15,13 @@ class App extends Component {
     return (
       <Router>
       <div style={styles.fill}>
+        <Route 
+          exact={true}
+          path={'/'}
+          render={() => (
+            <Redirect to='/hsl/10/90/50' />
+          )}
+        />
         <ul style={styles.nav}>
           <NavLink to="/hsl/10/90/50">Red</NavLink>
           <NavLink to="/hsl/120/100/40">Green</NavLink>
@@ -23,17 +30,22 @@ class App extends Component {
         </ul>
 
         <div style= {styles.content}>
-          <Route 
-            exact={true}
-            path={'/hsl/:h/:s/:l'}
-            component={HSL}
-          />
+          <Switch>
+            <Route 
+              exact={true}
+              path={'/hsl/:h/:s/:l'}
+              component={HSL}
+            />
 
-          <Route 
-            exact={true}
-            path={'/rgb/:r/:g/:b'}
-            component={RGB}
-          />
+            <Route 
+              exact={true}
+              path={'/rgb/:r/:g/:b'}
+              component={RGB}
+            />
+            <Route 
+              render={() => <div> Not Found </div>}
+            />
+          </Switch>
         </div>
       </div>
     </Router>
