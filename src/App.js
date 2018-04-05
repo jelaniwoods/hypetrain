@@ -9,6 +9,10 @@ import {
 import NavLink from './components/NavLink';
 import RGB from './components/RGB';
 import HSL from './components/HSL';
+import {
+  TransitionGroup,
+  CSSTransition,
+} from 'react-transition-group';
 
 class App extends Component {
   render() {
