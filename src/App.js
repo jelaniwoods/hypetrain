@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import './css/App.css';
 import {
   BrowserRouter as Router,
-  Link,
   Route, // for later
   Redirect, // for later
   Switch, // for later
 } from 'react-router-dom';
 import NavLink from './components/NavLink';
 // import RGB from './components/RGB';
+import HSL from './components/HSL';
 
 class App extends Component {
   render() {
@@ -21,6 +21,14 @@ class App extends Component {
           <NavLink to="/rgb/33/150/243">Blue</NavLink>
           <NavLink to="/rgb/240/98/146">Pink</NavLink>
         </ul>
+
+        <div style= {styles.content}>
+          <Route 
+            exact={true}
+            path={'/hsl/:h/:s/:l'}
+            component={HSL}
+          />
+        </div>
       </div>
     </Router>
     );
