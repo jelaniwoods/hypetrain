@@ -9,6 +9,9 @@ import {
 import NavLink from './components/NavLink';
 import RGB from './components/RGB';
 import HSL from './components/HSL';
+import Join from './components/Join';
+import About from './components/About';
+import Home from './components/Home';
 import {
   TransitionGroup,
   CSSTransition,
