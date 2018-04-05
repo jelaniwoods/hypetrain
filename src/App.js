@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './css/App.css';
 import {
   BrowserRouter as Router,
-  Route, // for later
-  Redirect, // for later
-  Switch, // for later
+  Route, 
+  Redirect, 
+  Switch, 
 } from 'react-router-dom';
 import NavLink from './components/NavLink';
 import RGB from './components/RGB';
@@ -18,40 +18,52 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div style={styles.fill}>
-        <Route 
-          exact={true}
-          path={'/'}
-          render={() => (
-            <Redirect to='/hsl/10/90/50' />
-          )}
-        />
-        <ul style={styles.nav}>
-          <NavLink to="/hsl/10/90/50">Red</NavLink>
-          <NavLink to="/hsl/120/100/40">Green</NavLink>
-          <NavLink to="/rgb/33/150/243">Blue</NavLink>
-          <NavLink to="/rgb/240/98/146">Pink</NavLink>
-        </ul>
-
-        <div style= {styles.content}>
-          <Switch>
+        <Route render={({location}) => ( 
+          <div style={styles.fill}>
             <Route 
               exact={true}
-              path={'/hsl/:h/:s/:l'}
-              component={HSL}
+              path={'/'}
+              render={() => (
+                <Redirect to='/hsl/10/90/50' />
+              )}
             />
+            <ul style={styles.nav}>
+              <NavLink to="/hsl/10/90/50">Red</NavLink>
+              <NavLink to="/hsl/120/100/40">Green</NavLink>
+              <NavLink to="/rgb/33/150/243">Blue</NavLink>
+              <NavLink to="/rgb/240/98/146">Pink</NavLink>
+            </ul>
 
-            <Route 
-              exact={true}
-              path={'/rgb/:r/:g/:b'}
-              component={RGB}
-            />
-            <Route 
-              render={() => <div> Not Found </div>}
-            />
-          </Switch>
-        </div>
-      </div>
+            <div style= {styles.content}>
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  timeout={300}
+                  classNames='fade'  
+                >
+                  <Switch
+                    location={location}
+                  >
+                    <Route 
+                      exact={true}
+                      path={'/hsl/:h/:s/:l'}
+                      component={HSL}
+                    />
+
+                    <Route 
+                      exact={true}
+                      path={'/rgb/:r/:g/:b'}
+                      component={RGB}
+                    />
+                    <Route 
+                      render={() => <div> Not Found </div>}
+                    />
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            </div>
+          </div>
+        )} />
     </Router>
     );
   }
@@ -81,8 +93,6 @@ styles.nav = {
   height: '40px',
   width: '100%',
   display: 'flex',
-  zIndex: 1,
-  background: 'white'
 }
 
 

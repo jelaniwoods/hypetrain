@@ -19,7 +19,7 @@ const RGB = ({ match }) => {
         position: 'absolute',
         left: 0,
         right: 0,
-        top: 0,
+        top: '40px',
         bottom: 0,
         color: 'white',
         paddingTop: '20px',
