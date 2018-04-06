@@ -3,27 +3,26 @@
   z-index: 1;
 }
 .fade-enter.fade-enter-active {
-  opacity: 1;
   transition: opacity 250ms ease-in;
 }
 .pageSlider-enter {
-  opacity: 0;
   z-index: 1;
-  transform: translate3d(100%, 0, 0);
+  transform: translate3d(150%, 0, 0);
 }
 .pageSlider-exit {
-  opacity: 1;
   transform: translate3d(0, 0, 0);
 }
 .pageSlider-exit.pageSlider-exit-active {
-  opacity: 1;
-  transform: translate3d(-100%, 0, 0);
-  transition: all .9s;
+  transform: translate3d(-200%, 0, 0);
+  transition-property: transform;
+  transition-duration: 1.9s;
 }
 .pageSlider-enter.pageSlider-enter-active {
-  opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: all .9s;
+  /* transition: all .9s; */
+  transition-property: transform;
+  transition-duration: 1.9s;
+  /* transition-delay: 1s; */
 }
 .page {
   position: absolute;

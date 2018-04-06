@@ -9,9 +9,10 @@ import {
 import NavLink from './components/NavLink';
 import RGB from './components/RGB';
 import HSL from './components/HSL';
-import Join from './components/Join';
-import About from './components/About';
+// import Join from './components/Join';
+// import About from './components/About';
 import Home from './components/Home';
+import Load from './components/Load';
 import {
   TransitionGroup,
   CSSTransition,
@@ -37,8 +38,8 @@ class App extends Component {
               <NavLink to="/rgb/240/98/146">Pink</NavLink>
               <NavLink to="/Home">Home</NavLink>
             </ul>
-
             <div style= {styles.content}>
+              <Load />
               <TransitionGroup>
                 <CSSTransition
                   key={location.key}
@@ -89,7 +90,7 @@ styles.fill = {
   top: 0,
   bottom: 0
 }
-styles.content - {
+styles.content = {
   ...styles.fill,
   top: '40px',
   textAlign: 'center'
