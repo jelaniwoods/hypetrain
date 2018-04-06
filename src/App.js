@@ -39,11 +39,10 @@ class App extends Component {
               <NavLink to="/Home">Home</NavLink>
             </ul>
             <div style= {styles.content}>
-              <Load />
               <TransitionGroup>
                 <CSSTransition
                   key={location.key}
-                  timeout={900}
+                  timeout={8000}
                   classNames='pageSlider'  
                 >
                   <Switch
@@ -71,6 +70,7 @@ class App extends Component {
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>
+              <Load />
             </div>
           </div>
         )} />
@@ -88,7 +88,8 @@ styles.fill = {
   left: 0,
   right: 0,
   top: 0,
-  bottom: 0
+  bottom: 0,
+  overflowX: 'hidden'
 }
 styles.content = {
   ...styles.fill,
