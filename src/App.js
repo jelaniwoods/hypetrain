@@ -35,14 +35,15 @@ class App extends Component {
               <NavLink to="/hsl/120/100/40">Green</NavLink>
               <NavLink to="/rgb/33/150/243">Blue</NavLink>
               <NavLink to="/rgb/240/98/146">Pink</NavLink>
+              <NavLink to="/Home">Home</NavLink>
             </ul>
 
             <div style= {styles.content}>
               <TransitionGroup>
                 <CSSTransition
                   key={location.key}
-                  timeout={300}
-                  classNames='fade'  
+                  timeout={900}
+                  classNames='pageSlider'  
                 >
                   <Switch
                     location={location}
@@ -57,6 +58,11 @@ class App extends Component {
                       exact={true}
                       path={'/rgb/:r/:g/:b'}
                       component={RGB}
+                    />
+                    <Route 
+                      exact={true}
+                      path={'/home'}
+                      component={Home}
                     />
                     <Route 
                       render={() => <div> Not Found </div>}
